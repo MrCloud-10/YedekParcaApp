@@ -1,0 +1,36 @@
+<img
+src="/src/assets/user.png"
+alt=""
+style="
+position: fixed;
+top: 20px;
+right: 15px;">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <img class="nav-item"
+      src="/src/assets/user.png"
+      alt=""
+      style="
+      position: fixed;
+      top: 20px;
+      right: 15px;">
+        <label class="nav-item ">
+          <a routerLink="/board" class="nav-link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"
+          >{{fullName}}</a>
+        </label>
+        <button class="nav-item btn btn-danger">
+          <a style="color: white;" routerLink="/login" class="nav-link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"
+          >Log Out</a>
+        </button>
+    </div>
+  </div>
+  <div class="row">
+        <router-outlet></router-outlet>
+  </div>
+</div>

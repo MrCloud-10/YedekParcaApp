@@ -1,0 +1,57 @@
+<div class="contoiner" style="margin-top: 10%;">
+  <h4 class="login-text">Giriş</h4>
+  <form novalidate #form="ngForm" (ngSubmit)="submitForm(form)">
+    <div class="bg-danger text-white p-3 my-2" *ngIf="formSubmitted && form.invalid">
+      Email/Kullanıcı adı ya da şifreniz yanlıştır..
+      <ul>
+          <li *ngFor="let error of getFormValidationErrors(form)">
+              {{ error }}
+          </li>
+      </ul>
+    </div>
+    <div class="bg-danger text-white p-3 my-2" *ngIf="formSubmitted && !isNotIn()">
+      Email/Kullanıcı adı ya da şifreniz yanlıştır..
+    </div>
+    <div class="form-group">
+      <input
+        required
+        [(ngModel)]="newLog.loginUser"
+        name="loginUser"
+        #loginUser="ngModel"
+        placeholder="Email / Kullanıcı Adı"
+        class="form-control"
+      />
+    </div>
+      <div class="alert alert-danger" *ngIf="(formSubmitted || loginUser.dirty) && loginUser.invalid">
+        <ul>
+            <li *ngFor="let error of getValidationErrors(loginUser)">
+                {{ error }}
+            </li>
+        </ul>
+    </div>
+
+    <div class="form-group">
+      <input
+        required
+        [(ngModel)]="newLog.password"
+        name="password"
+        #password="ngModel"
+        minlength="8"
+        type="password"
+        placeholder="Şifre"
+        class="form-control"
+      />
+    </div>
+      <div class="alert alert-danger" *ngIf="(formSubmitted || password.dirty) && password.invalid">
+        <ul>
+            <li *ngFor="let error of getValidationErrors(password)">
+                {{ error }}
+            </li>
+        </ul>
+    </div>
+    <button [disabled]="formSubmitted || form.invalid"
+    [class.btn-secondary]="formSubmitted || form.invalid"
+    type="submit" id="btn-login" class="btn btn-success" >Giriş Yap ></button>
+  </form>
+</div>
+
