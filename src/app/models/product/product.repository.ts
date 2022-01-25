@@ -1,8 +1,7 @@
-import { time } from "console";
 import { ProductDataSource } from "./product.datasource";
 import { Brand, Model, Product } from "./product.model";
 
-export class DashboardRepsitory{
+export class ProductRepository{
   private productSource: ProductDataSource;
   private products: Product[];
   private brands: Brand[];

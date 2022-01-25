@@ -23,8 +23,6 @@ export class AuthService {
     }
 
     login(newLog:LoginValidate,modelU:UserRepository) {
-
-      console.log(newLog)
       if(this.isInData(newLog,modelU)){
         this.loggedIn = true;
       }
@@ -32,12 +30,12 @@ export class AuthService {
 
     logout() {
         this.loggedIn = false;
+        this.Luser=new User(0," "," "," "," "," "," ");
         this.router.navigateByUrl('/login');
     }
+
     isInData(newLog:LoginValidate,modelU:UserRepository){
-      console.log(newLog);
       for(let i=0;i<modelU.getUsers().length;i++){
-        console.log(modelU.getUsers()[i]);
         if(modelU.getUsers()[i].password==newLog.password && (modelU.getUsers()[i].email==newLog.loginUser || modelU.getUsers()[i].username==newLog.loginUser)){
           this.Luser=modelU.getUsers()[i];
           return true;

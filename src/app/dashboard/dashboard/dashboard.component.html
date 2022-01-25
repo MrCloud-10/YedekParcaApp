@@ -1,2 +1,87 @@
-<p>works</p>
+<form
+style="float: left; width: 33%; height: 40px;
+font-size: 25px; font-family: Arial, Helvetica, sans-serif">
+    <select style="size: 100%;">
+      <option value="None">Marka</option>
+      <option *ngFor="let marka of brands" value="{{marka.name}}">
+        {{marka.name}}
+      </option>
+    </select>
+</form>
+
+<form
+style="float: left; margin-left: 5px; width: 33%;
+height: 40px; font-size: 25px; font-family: Arial, Helvetica, sans-serif">
+  <select style="size: 100%;">
+    <option value="None">Model</option>
+    <option *ngFor="let modl of models" value="{{modl.name}}">
+      {{modl.name}}
+    </option>
+  </select>
+</form>
+
+<form
+style="float: left; margin-left:
+5px; width: 25%; height: 40px; font-size: 25px;
+font-family: Arial, Helvetica, sans-serif">
+    <div class="input-group">
+      <div class="form-outline">
+        <input id="search-input" type="search" id="form1" class="form-control" placeholder="Parça No"
+        />
+      </div>
+      <button id="search-button" type="button" class="btn btn-success">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+</form>
+
+<div class="md-5" style="float: left; width: 75%; margin-top: 20px;" >
+    <table class="table">
+      <thead>
+      <tr>
+        <th>
+          Resim
+        </th>
+        <th>
+          Parça No
+        </th>
+        <th>
+          Parça Adı
+        </th>
+        <th>
+          Tutar
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let parca of products">
+        <td>
+          <img src="/assets/{{parca.imgS}}">
+        </td>
+        <td>
+          {{parca.id}}
+        </td>
+        <td>
+          {{parca.name}}
+        </td>
+        <td>
+          {{parca.price}}
+        </td>
+        <td >
+          <form style="float: right;">
+            <input
+            type="number"
+            placeholder="Adet"
+          />
+          <button class="btn btn-dark" style="margin-left: 5px;">+</button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+</div>
+
+<div class="md-3" style="float: right; width: 25%; margin-top: 20px;">
+  <h1>Basket</h1>
+</div>
 

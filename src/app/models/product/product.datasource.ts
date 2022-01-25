@@ -35,19 +35,18 @@ export class ProductDataSource{
       );
 
       this.models=new Array<Model>(
-          new Model(1,"Model1",2),
-          new Model(2,"Model2",2),
-          new Model(3,"Model3",1),
-          new Model(4,"Model4",5),
-          new Model(5,"Model5",6),
-          new Model(7,"Model7",2),
-          new Model(8,"Model8",1),
-          new Model(9,"Model9",4),
-          new Model(10,"Model10",4),
-          new Model(11,"Model11",2),
-          new Model(12,"Model12",4),
-          new Model(2,"Model2",3),
-          new Model(6,"Model6",3)
+          new Model(1,"Model1",[2]),
+          new Model(2,"Model2",[2,3]),
+          new Model(3,"Model3",[1]),
+          new Model(4,"Model4",[5]),
+          new Model(5,"Model5",[6]),
+          new Model(7,"Model7",[2]),
+          new Model(8,"Model8",[1]),
+          new Model(9,"Model9",[4]),
+          new Model(10,"Model10",[4]),
+          new Model(11,"Model11",[2]),
+          new Model(12,"Model12",[4]),
+          new Model(6,"Model6",[3])
       );
     }
 

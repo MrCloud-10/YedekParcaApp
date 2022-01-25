@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductRepository } from 'src/app/models/product/product.repository';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  products;
+  brands;
+  models;
+  model:ProductRepository;
+  constructor() {
+    this.model=new ProductRepository();
+    this.products=this.model.getProducts();
+    this.models=this.model.getModels();
+    this.brands=this.model.getBrands();
+  }
 
   ngOnInit(): void {
   }
+
 
 }

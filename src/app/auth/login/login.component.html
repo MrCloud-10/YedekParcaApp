@@ -1,18 +1,12 @@
-<div class="contoiner" style="margin-top: 10%;">
+<div class="contoiner" style="margin:auto; width: 400px; height: 400px; position: relative; margin-top: 17%;">
   <h4 class="login-text">Giriş</h4>
   <form novalidate #form="ngForm" (ngSubmit)="submitForm(form)">
-    <div class="bg-danger text-white p-3 my-2" *ngIf="formSubmitted && form.invalid">
-      Email/Kullanıcı adı ya da şifreniz yanlıştır..
-      <ul>
-          <li *ngFor="let error of getFormValidationErrors(form)">
-              {{ error }}
-          </li>
-      </ul>
-    </div>
-    <div class="bg-danger text-white p-3 my-2" *ngIf="formSubmitted && !isNotIn()">
+
+    <div class="bg-danger text-white p-3 my-2" *ngIf="isNotIn()">
       Email/Kullanıcı adı ya da şifreniz yanlıştır..
     </div>
-    <div class="form-group">
+
+    <div class="form-group" style="margin-top: 10px;">
       <input
         required
         [(ngModel)]="newLog.loginUser"
@@ -30,7 +24,7 @@
         </ul>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" style="margin-top: 10px;">
       <input
         required
         [(ngModel)]="newLog.password"
@@ -50,8 +44,8 @@
         </ul>
     </div>
     <button [disabled]="formSubmitted || form.invalid"
-    [class.btn-secondary]="formSubmitted || form.invalid"
-    type="submit" id="btn-login" class="btn btn-success" >Giriş Yap ></button>
+    [class.btn-secondary]="formSubmitted || form.invalid" (click)="isClicked($event)"
+    type="submit" id="btn-login" class="btn btn-success" style="margin-top: 10px; margin-left: 74%;" >Giriş Yap ></button>
   </form>
 </div>
 

@@ -17,9 +17,8 @@ export class LoginComponent implements OnInit {
 
   newLog:LoginValidate=new LoginValidate();
 
-  newUser:any;
-
   formSubmitted: boolean=false;
+  formClicked: boolean=false;
 
   get jsonProduct(){
     return JSON.stringify(this.newLog);
@@ -33,7 +32,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log(this.authService.loggedIn);
     this.authService.login(this.newLog,this.modelU);
     this.authService.isAuthenticated()
       .then(isAuthenticated => {
@@ -44,27 +42,15 @@ export class LoginComponent implements OnInit {
             this.router.navigateByUrl(redirectUrl);
         }
       });
-
-
 }
 
-logout() {
+/*logout() {
+  this.newLog=new LoginValidate();
+  this.formSubmitted=false;
   this.authService.logout();
-}
 
-getFormValidationErrors(form:NgForm):string[]{
-  let messages: string[] = [];
+}*/
 
-    Object.keys(form.controls).forEach(k=> {
-        console.log(k);
-        console.log(form.controls[k]);
-
-        this.getValidationErrors(form.controls[k],k)
-            .forEach(message=> messages.push(message));
-    })
-
-    return messages;
-}
 getValidationErrors(state: any, key?: string) {
   let ctrlName: string = state.name || key;
   let messages: string[] = [];
@@ -72,7 +58,7 @@ getValidationErrors(state: any, key?: string) {
       for (let errorName in state.errors) {
           switch (errorName) {
               case "required":
-                  messages.push(`${ctrlName} giriniz..`);
+                  messages.push(`İlgili alanı giriniz..`);
                   break;
               case "minlength":
                   messages.push(`En az 8 karakterli olmalıdır,${ctrlName}..`);
@@ -88,24 +74,25 @@ getValidationErrors(state: any, key?: string) {
 
 
 submitForm(form:NgForm){
-  console.log(form);
   this.newLog=form.value;
-  console.log(this.newLog);
-    this.formSubmitted = true;
-    if(form.valid) {
-        this.formSubmitted = false;
-    }
+  this.formSubmitted = true;
+  if(form.valid) {
+      this.formSubmitted = false;
+  }
   this.login();
 }
+
 isNotIn(){
-  if(this.authService.loggedIn){
-    return false;
-  }
-  else{
+  if(!this.authService.loggedIn && this.formClicked){
     return true;
+  }
+  else {
+    return false;
   }
 }
 
-
+isClicked($event:any){
+  this.formClicked=true;
+}
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { auditTime } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -19,6 +20,9 @@ export class DashboardLayoutComponent implements OnInit {
   getUserDetails() {
     this.fullName = this.authService.Luser.name+" "+this.authService.Luser.surname;
     this.imgUrl = this.authService.Luser.imgS;
+  }
+  logOut(){
+    this.authService.logout();
   }
 
 
