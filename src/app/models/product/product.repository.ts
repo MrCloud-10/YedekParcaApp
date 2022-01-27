@@ -26,57 +26,29 @@ export class ProductRepository{
     return this.models;
   }
 
-  getProductById(Id:number):Product[]{//dashboarddan gelen ürün kodu ile ürün listelenecek
-    for(let i=0 ;i<this.products.length;i++){
-      if(this.products[i].id==Id){
-        return [this.products[i]];
+  getProductsByModel(modelId:number){
+    let modelurunler=[];
+    for(let prdct of this.products){
+      if(prdct.modelId.includes(modelId)){
+        modelurunler.push(prdct);
       }
     }
-    return [];
+    return modelurunler;
   }
-  getModelById(Id:number):Model[]{
-    for(let i=0 ;i<this.models.length;i++){
-      if(this.models[i].id==Id){
-        return [this.models[i]];
+  getProductsByBrand(brandId:number){
+    let urunler: Product[]=[];
+    for(let mdl of this.models){
+      if(mdl.brandId.includes(brandId)){
+        for(let prdct of this.products){
+          if(prdct.modelId.includes(mdl.id)){
+            if(!urunler.includes(prdct)){
+              urunler.push(prdct);
+            }
+          }
+        }
       }
     }
-    return [];
-  }
-  getBrandsById(Id:number):Brand[]{
-    for(let i=0 ;i<this.brands.length;i++){
-      if(this.brands[i].id==Id){
-        return [this.brands[i]];
-      }
-    }
-    return [];
-  }
-  getModelByName(name:string):Model[]{
-    for(let i=0 ;i<this.models.length;i++){
-      if(this.models[i].name==name){
-        return [this.models[i]];
-      }
-    }
-    return [];
-  }
-  getBrandByName(name:string):Brand[]{
-    for(let i=0 ;i<this.brands.length;i++){
-      if(this.brands[i].name==name){
-        return [this.brands[i]];
-      }
-    }
-    return [];
-  }
-  getProductByModel(model:string){//burada dashboard model adı alınarak ürünler listelenecek
-    let probymodel: Product[];
-    let pmodel: Model[]=this.getModelByName(model);
-    for(let i=0;i<this.products.length;i++){
-      for(let j=0;j<pmodel.length;j++){
-
-      }
-    }
-  }
-  getProductByBrand(model:string){//burada dashboard brand adı alınarak ürünler listelenecek
-
+    return urunler;
   }
 
 }
