@@ -1,11 +1,11 @@
 # Project
 In this project
 1- Data is representing with app/Models
-/user
-User:> id,name,surname,imgS,username,email,password (taking from database )
-LoginValidate:>loginUser,password (this data type is using by Logging in)
+-/user
+*User:> id,name,surname,imgS,username,email,password (taking from database )
+*LoginValidate:>loginUser,password (this data type is using by Logging in)
 /product
-Product:>id,name,price,number,imgS,modelId[] (taking from database )
+-Product:>id,name,price,number,imgS,modelId[] (taking from database )
 Model:>id,name,brandId (taking from database )
 Brand:>id,name (taking from database )
 
@@ -34,7 +34,7 @@ In dashboard, will build basket.
 
 # Yedekparcauyg
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3, with Visual Studio Code.
 
 ## Development server
 
@@ -59,6 +59,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-#� �Y�e�d�e�k�P�a�r�c�a�A�p�p�
-�
-�
+
+## Starting The Project
+Go to project directory
+Run `npm install` after that run `ng serve`
