@@ -29,7 +29,7 @@ This modul is for listing product.
 
 6- Shortcomings
 In validation, the password dont has char validate.
-In dashboard, listing products isnt ended. Questioning will build in product.repository.
+In dashboard, adding from dash to basket not ended.
 In dashboard, will build basket.
 
 # Yedekparcauyg
