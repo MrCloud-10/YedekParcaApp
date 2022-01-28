@@ -25,12 +25,11 @@ This modul is for validation processes.
 This modul almost ended but it has a few shortcomings.
 
 5- app/dashboard
-This modul is for listing product.
+This modul is for listing product and using to add products to basket.
 
 6- Shortcomings
-In validation, the password dont has char validate.
-In dashboard, adding from dash to basket not ended.
-In dashboard, will build basket.
+It can be improved that searching by brand or br model.
+There can build better UI with css.
 
 # Yedekparcauyg
 
@@ -65,4 +64,4 @@ Go to project directory
 Run `npm install` after that run `ng serve`
 
 ## Using the Project
-You can use this validation inputs; for User: "yusufbulut","yusufblt10@outlook.com", for password : "12345abc"/----\ User: "otokoç","otokoç@gmail.com",password :"otokoç123"/----\ User: "jsangular","jsangular@npm.com", password:"npmInsta11" and You can reach them in to project models/user/user.datasource
+You can use this validation inputs; for User: "yusufbulut","yusufblt10@outlook.com", for password : "12345abC"/----\ User: "otokoç","otokoç@gmail.com",password :"Otokoç123"/----\ User: "jsangular","jsangular@npm.com", password:"npmInsta11" and You can reach them in to project models/user/user.datasource
