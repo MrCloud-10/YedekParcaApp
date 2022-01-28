@@ -1,12 +1,20 @@
 # Project
 In this project
+
 1- Data is representing with app/Models
+
 -/user
+
 *User:> id,name,surname,imgS,username,email,password (taking from database )
+
 *LoginValidate:>loginUser,password (this data type is using by Logging in)
+
 /product
+
 -Product:>id,name,price,number,imgS,modelId[] (taking from database )
+
 Model:>id,name,brandId (taking from database )
+
 Brand:>id,name (taking from database )
 
 This models have one datasource which as representing Database and one repository which as using it when we need data 
