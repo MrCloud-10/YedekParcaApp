@@ -45,22 +45,7 @@ It will be improved that searching by brand or br model.
 There can be builded better UI with css.
 There can be added an User page.
 
-## Starting The Project
 
-Go to project directory
-Run `npm install` after that run `ng serve`
-
-## Using the Project
-
-You can use this validation inputs; 
-
-for User: "yusufbulut","yusufblt10@outlook.com", for password : "12345abC"
-
-User: "otokoç","otokoc@otokoc.com",password :"Otokoç123"
-
-User: "jsangular","jsangular@npm.com", password:"npmInsta11"
-
-and You can reach them in to project models/user/user.datasource
 
 ## What is Done?
 
@@ -80,6 +65,22 @@ Dashboard
 4. Counting the basket and erasing products from basket
 5. Listing Counts and Basket items
 
+## Starting The Project
+
+Go to project directory
+Run `npm install` after that run `ng serve`
+
+## Using the Project
+
+You can use this validation inputs; 
+
+for User: "yusufbulut","yusufblt10@outlook.com", for password : "12345abC"
+
+User: "otokoç","otokoc@otokoc.com",password :"Otokoç123"
+
+User: "jsangular","jsangular@npm.com", password:"npmInsta11"
+
+and You can reach them in to project models/user/user.datasource
 
 # Yedekparcauyg
 
