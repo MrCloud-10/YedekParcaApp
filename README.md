@@ -3,7 +3,7 @@ In this project
 
 1- Data is representing with app/Models
 
--/user
+/user
 
 *User:> id,name,surname,imgS,username,email,password (taking from database )
 
@@ -11,31 +11,36 @@ In this project
 
 /product
 
--Product:>id,name,price,number,imgS,modelId[] (taking from database )
+*Product:>id,name,price,number,imgS,modelId[] (taking from database )
 
-Model:>id,name,brandId (taking from database )
+*Model:>id,name,brandId (taking from database )
 
-Brand:>id,name (taking from database )
+*Brand:>id,name (taking from database )
 
 This models have one datasource which as representing Database and one repository which as using it when we need data 
 
 2- app/services
+
 There is two service, these are auth and authguard for authenticatication.
 auth service is looking login database validations and takes loggined user.
 auth guard is waiting for logging and guarding dashboard.
 
 
 3- app/layouts
+
 This structure is like a junction between modules in the project.
 
 4- app/auth
+
 This modul is for validation processes.
 This modul almost ended but it has a few shortcomings.
 
 5- app/dashboard
+
 This modul is for listing product and using to add products to basket.
 
 6- Shortcomings
+
 It can be improved that searching by brand or br model.
 There can build better UI with css.
 
