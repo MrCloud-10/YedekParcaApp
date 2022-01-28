@@ -63,3 +63,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Starting The Project
 Go to project directory
 Run `npm install` after that run `ng serve`
+
+## Using the Project
+You can use this validation inputs; for User: "yusufbulut","yusufblt10@outlook.com", for password : "12345abc"/----\ User: "otokoç","otokoç@gmail.com",password :"otokoç123"/----\ User: "jsangular","jsangular@npm.com", password:"npmInsta11"
