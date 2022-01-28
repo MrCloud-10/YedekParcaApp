@@ -16,8 +16,12 @@ export class DashboardComponent implements OnInit {
   models;
   modelP:ProductRepository;
   msg=false;
-  basket=new Array<[Product,number]>();
+  basket=new Array<basketItem>();
   selectedPrdct:any;
+  toplamTutar=0;
+  araTutar=0;
+  kdv=0;
+  selectedItem:any;
 
   constructor() {
     this.modelP=new ProductRepository();
@@ -56,7 +60,7 @@ export class DashboardComponent implements OnInit {
   }
   onChangeMarka(){
     let prdcts=[];
-    console.log(this.inputDash.marka);
+   // console.log(this.inputDash.marka);
     if(this.inputDash.marka==""){
       this.products=this.modelP.getProducts();
     }
@@ -67,7 +71,7 @@ export class DashboardComponent implements OnInit {
   }
   onChangeModel(){
     let prdcts=[];
-    console.log(this.inputDash.model);
+    //console.log(this.inputDash.model);
     if(this.inputDash.model==""){
       this.products=this.modelP.getProducts();
     }
@@ -76,23 +80,55 @@ export class DashboardComponent implements OnInit {
       this.products=prdcts;
     }
   }
-  addBasket(){//ekleme işlemleri gerçekleştirilecek
+
+  addBasket(){
     let element=(<HTMLInputElement>document.getElementById(this.selectedPrdct.id)).value;
-
-    if(element!=""){
-
+    //console.log(element,this.selectedPrdct);
+    if(element!="" && Number(element)!=NaN && Number(element)>0 ){
+      let item=new basketItem(this.selectedPrdct,Number(element));
+      if(this.isInBasket(item)){
+        for(let bskt of this.basket){
+          if(bskt.Product==item.Product && item.adetNumber!=undefined && bskt.adetNumber!=undefined){
+            bskt.adetNumber+=item.adetNumber;
+            break;
+          }
+        }
+      }
+      else{
+        this.basket.push(item);
+      }
     }
+    (<HTMLInputElement>document.getElementById(this.selectedPrdct.id)).value="";
+    this.countToplam();
   }
-
-  isInBasket(deger:any){
+  isInBasket(deger:basketItem){
     for(let bskt of this.basket){
-      if(this.basket.includes(deger)){
+      if(bskt.Product==deger.Product){
         return true;
       }
     }
     return false;
   }
 
+  countToplam(){
+    this.toplamTutar=0;
+    this.araTutar=0;
+    this.kdv=0;
+    for(let deg of this.basket){
+      if(deg.adetNumber!=undefined){
+        this.araTutar+=(deg.Product.price*deg.adetNumber);
+      }
+    }
+    this.kdv=this.araTutar*18/100;
+    this.toplamTutar=this.kdv+this.araTutar;
+  }
+  deleteItem(){
+    this.basket.splice(this.basket.indexOf(this.selectedItem),1);
+    this.countToplam();
+  }
+  parcaTutar(parcaPrice:number,adet:number){
+    return parcaPrice*adet;
+  }
 
 }
 export class fromDash{
@@ -102,5 +138,10 @@ export class fromDash{
       public urunNo?:number,
       public adet?:number[]
   ){}
+}
+
+export class basketItem{
+  constructor (public Product?:any,
+    public adetNumber:number=0){}
 }
 

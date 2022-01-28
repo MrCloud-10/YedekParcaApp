@@ -52,6 +52,7 @@ export class LoginComponent implements OnInit {
 }*/
 
 getValidationErrors(state: any, key?: string) {
+  console.log(state);
   let ctrlName: string = state.name || key;
   let messages: string[] = [];
   if (state.errors) {
@@ -61,14 +62,15 @@ getValidationErrors(state: any, key?: string) {
                   messages.push(`İlgili alanı giriniz..`);
                   break;
               case "minlength":
-                  messages.push(`En az 8 karakterli olmalıdır,${ctrlName}..`);
+                  messages.push(`Şifre en az 8 karakterli olmalıdır..`);
                   break;
               case "pattern":
-                  messages.push(`${ctrlName} tanımlanmamış karakter içermektedir..`);
+                  messages.push("Şifre en az bir büyük,bir küçük ve bir de özel karakter içermelidir..");
                   break;
           }
       }
   }
+
   return messages;
 }
 

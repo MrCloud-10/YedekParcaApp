@@ -1,3 +1,5 @@
+<div>
+
 <div class="md-5" style=" border-right: solid; float: left; width: 75%; margin-top: 20px;" >
 
 <form
@@ -87,6 +89,46 @@ font-family: Arial, Helvetica, sans-serif">
 </div>
 
 <div class="md-3" style="float: right; width: 25%; margin-top: 20px;">
-  <h1>Basket</h1>
+
+  <h2 style="margin-left: 15px;">Sepet</h2>
+  <table style="margin-top: 15px; margin-left: 7px; width: 100%;">
+    <thead *ngIf="this.basket.length>0">
+      <tr>
+        <th style="width: 33%;"> Parca No</th>
+        <th style="width: 33%">Adet</th>
+        <th style="width: 33%;">Tutar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of basket">
+        <td style="width: 33%;">{{item.Product.id}}</td>
+        <td style="width: 33%;">{{item.adetNumber}}</td>
+        <td>{{ parcaTutar(item.adetNumber,item.Product.price)}}</td>
+        <td style="width: 33%;">
+          <button (click)="deleteItem()" (mouseover)="selectedItem=item" (mouseleave)="undefined" class="btn btn-danger">Sil</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div style="margin-top: 15px; margin-left: 7px; border-top: solid;" *ngIf="this.basket.length>0" >
+    <div style="margin-top: 15px;">
+      <label style="width: 33%; " >Ara Tutar</label>
+      <label style="width: 33%;"></label>
+      <label style="width: 33%;">{{araTutar.toFixed(2)}}</label>
+    </div>
+    <div style="margin-top: 15px;">
+      <label style="width: 33%;" >KDV</label>
+      <label style="width: 33%;">%18</label>
+      <label style="width: 33%;">{{kdv.toFixed(2)}}</label>
+    </div>
+    <div style="margin-top: 15px;">
+      <label style="width: 33%; font: bold;">Toplam</label>
+      <label style="width: 33%;"></label>
+      <label style="width: 33%;">{{toplamTutar.toFixed(2)}}</label>
+    </div>
+  </div>
 </div>
 
+</div>
