@@ -56,7 +56,7 @@ You can use this validation inputs;
 
 for User: "yusufbulut","yusufblt10@outlook.com", for password : "12345abC"
 
-User: "otokoç","otokoç@gmail.com",password :"Otokoç123"
+User: "otokoç","otokoc@otokoc.com",password :"Otokoç123"
 
 User: "jsangular","jsangular@npm.com", password:"npmInsta11"
 
