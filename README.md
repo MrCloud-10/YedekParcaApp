@@ -65,11 +65,6 @@ Dashboard
 4. Counting the basket and erasing products from basket
 5. Listing Counts and Basket items
 
-## Starting The Project
-
-Go to project directory
-Run `npm install` after that run `ng serve`
-
 ## Using the Project
 
 You can use this validation inputs; 
@@ -81,6 +76,13 @@ User: "otokoç","otokoc@otokoc.com",password :"Otokoç123"
 User: "jsangular","jsangular@npm.com", password:"npmInsta11"
 
 and You can reach them in to project models/user/user.datasource
+
+## Starting The Project
+
+Go to project directory
+Run `npm install` after that run `ng serve`
+
+
 
 # Yedekparcauyg
 
