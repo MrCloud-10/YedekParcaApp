@@ -68,11 +68,9 @@ It can login to the system in more than one way and is managed through a single 
 
 Login
 
-1.1. Username (alphanumeric)
+1. Username(alphanumeric) / Mail (alphanumeric)
+2. Password (at least 8 characters, at least 1 uppercase and 1 lowercase letter and special character requirement)(special Char taked with just numbers)
 
-  1.2.Mail (alphanumeric)
-
-2.Password (at least 8 characters, at least 1 uppercase and 1 lowercase letter and special character requirement)(special Char taked with just numbers)
 
 Dashboard
 
