@@ -42,8 +42,8 @@ This modul is for listing product and using to add products to basket.
 6- Shortcomings
 
 It will be improved that searching by brand or br model.
-There can build better UI with css.
-There can add an User page.
+There can be builded better UI with css.
+There can be added an User page.
 
 ## Starting The Project
 
