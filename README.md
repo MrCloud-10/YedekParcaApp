@@ -1,4 +1,5 @@
-# This project builded for Otokoc Otomotiv Developer Challenge 2. task named "Set".
+# YedekParcaApp
+This project builded for Otokoc Otomotiv Developer Challenge 2. task named "Set".
 
 # Project
 In this project
