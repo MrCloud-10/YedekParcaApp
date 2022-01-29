@@ -46,7 +46,6 @@ This modul is for listing product and using to add products to basket.
 
 It will be improved that searching by brand or br model.
 There can be builded better UI with css.
-There can be added an User page.
 
 
 
