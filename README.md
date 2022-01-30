@@ -16,7 +16,7 @@ In this project
 
 *Product:>id,name,price,number,imgS,modelId[] (taking from database )
 
-*Model:>id,name,brandId (taking from database )
+*Model:>id,name,brandId[] (taking from database for this entity I thought there can be 2 or more same model name that different brands have )
 
 *Brand:>id,name (taking from database )
 
@@ -36,7 +36,6 @@ This structure is like a junction between modules in the project.
 4- app/auth
 
 This modul is for validation processes.
-This modul almost ended but it has a few shortcomings.
 
 5- app/dashboard
 
@@ -44,8 +43,8 @@ This modul is for listing product and using to add products to basket.
 
 6- Shortcomings
 
-It will be improved that searching by brand or br model.
-There can be builded better UI with css.
+It will be improved that searching by brand or by model.(There can be select one of them but these two different search not sync with other. That can be.)
+There can be builded better UI with css and pages can be more responsive.
 
 
 
