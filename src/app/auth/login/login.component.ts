@@ -52,7 +52,6 @@ export class LoginComponent implements OnInit {
 }*/
 
 getValidationErrors(state: any, key?: string) {
-  console.log(state);
   let ctrlName: string = state.name || key;
   let messages: string[] = [];
   if (state.errors) {

@@ -37,8 +37,9 @@ export class DashboardComponent implements OnInit {
   }
 
   prdctSearch(state: any, key?: number){
+    (<HTMLInputElement>document.getElementById("markaSelect")).value="";
+    (<HTMLInputElement>document.getElementById("modelSelect")).value="";
     let prdcts=[];
-    console.log(state);
     for(let prdct of this.modelP.getProducts()){
       if(prdct.id.toString().includes(state.control.value)){
         prdcts.push(prdct);
@@ -59,6 +60,8 @@ export class DashboardComponent implements OnInit {
 
   }
   onChangeMarka(){
+    (<HTMLInputElement>document.getElementById("modelSelect")).value="";
+    (<HTMLInputElement>document.getElementById("form1")).value="";
     let prdcts=[];
    // console.log(this.inputDash.marka);
     if(this.inputDash.marka==""){
@@ -70,6 +73,8 @@ export class DashboardComponent implements OnInit {
     }
   }
   onChangeModel(){
+    (<HTMLInputElement>document.getElementById("markaSelect")).value="";
+    (<HTMLInputElement>document.getElementById("form1")).value="";
     let prdcts=[];
     //console.log(this.inputDash.model);
     if(this.inputDash.model==""){
@@ -122,6 +127,7 @@ export class DashboardComponent implements OnInit {
     this.kdv=this.araTutar*18/100;
     this.toplamTutar=this.kdv+this.araTutar;
   }
+
   deleteItem(){
     this.basket.splice(this.basket.indexOf(this.selectedItem),1);
     this.countToplam();
