@@ -43,7 +43,7 @@ This modul is for listing product and using to add products to basket.
 
 6- Shortcomings
 
-It will be improved that searching by brand or by model.(There can be select one of them but these two different search not sync with other. That can be.)
+It will be improved that searching by brand or by model.(There can be select one of them but these two different search not sync with other. Can be added parca no in this sync)
 There can be builded better UI with css and pages can be more responsive.
 
 
@@ -70,7 +70,7 @@ Dashboard
 
 You can use this validation inputs; 
 
-for User: "yusufbulut","yusufblt10@outlook.com", for password : "12345abC"
+User: "yusufbulut","yusufblt10@outlook.com", for password : "12345abC"
 
 User: "otokoç","otokoc@otokoc.com",password :"Otokoç123"
 
@@ -82,7 +82,6 @@ and You can reach them in to project models/user/user.datasource
 
 Go to project directory
 Run `npm install` after that run `ng serve`
-
 
 
 # Yedekparcauyg
