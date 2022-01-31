@@ -1,3 +1,6 @@
+# YedekParcaApp
+This project builded for Otokoc Otomotiv Developer Challenge 2. task named "Set".
+
 # Project
 In this project
 
@@ -13,7 +16,7 @@ In this project
 
 *Product:>id,name,price,number,imgS,modelId[] (taking from database )
 
-*Model:>id,name,brandId (taking from database )
+*Model:>id,name,brandId[] (taking from database for this entity I thought there can be 2 or more same model name that different brands have )
 
 *Brand:>id,name (taking from database )
 
@@ -33,7 +36,6 @@ This structure is like a junction between modules in the project.
 4- app/auth
 
 This modul is for validation processes.
-This modul almost ended but it has a few shortcomings.
 
 5- app/dashboard
 
@@ -41,14 +43,28 @@ This modul is for listing product and using to add products to basket.
 
 6- Shortcomings
 
-It will be improved that searching by brand or br model.
-There can be builded better UI with css.
-There can be added an User page.
+It will be improved that searching by brand or by model.(There can be select one of them but these two different search not sync with other. That can be.)
+There can be builded better UI with css and pages can be more responsive.
 
-## Starting The Project
 
-Go to project directory
-Run `npm install` after that run `ng serve`
+
+## What is Done?
+
+It can login to the system in more than one way and is managed through a single login.
+
+Login
+
+1. Username(alphanumeric) / Mail (alphanumeric)
+2. Password (at least 8 characters, at least 1 uppercase and 1 lowercase letter and special character requirement)(special Char taked with just numbers)
+
+
+Dashboard
+
+1. Listed product items
+2. Filtering can be with brand, model and searching with product number
+3. Adding one or more  product items to basket with which entered numbers
+4. Counting the basket and erasing products from basket
+5. Listing Counts and Basket items
 
 ## Using the Project
 
@@ -62,25 +78,11 @@ User: "jsangular","jsangular@npm.com", password:"npmInsta11"
 
 and You can reach them in to project models/user/user.datasource
 
-## What is Done?
+## Starting The Project
 
-It can login to the system in more than one way and is managed through a single login.
+Go to project directory
+Run `npm install` after that run `ng serve`
 
-Login
-
-1.1. Username (alphanumeric)
-
-  1.2.Mail (alphanumeric)
-
-2.Password (at least 8 characters, at least 1 uppercase and 1 lowercase letter and special character requirement)(special Char taked with just numbers)
-
-Dashboard
-
-1. Listed product items
-2. Filtering can be with brand, model and searching with product number
-3. Adding one or more  product items to basket with which entered numbers
-4. Counting the basket and erasing products from basket
-5. Listing Counts and Basket items
 
 
 # Yedekparcauyg
